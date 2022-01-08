@@ -25,7 +25,7 @@ os.chdir("C:\Program Files\Bebebole\IconPackMaker")
 try :
     open("pathsettings.ini","x")
     file = open("pathsettings.ini","w")
-    response = requests.get('https://raw.githubusercontent.com/Bebebole/BebeboleIconsPython/main/pathsettings.ini')
+    response = requests.get('https://raw.githubusercontent.com/Bebebole/BebeboleIconsPython/main/Terminal/pathsettings.ini')
     file.write(response.text)
     file.close()
     print("Tu dois mettre à jour le fichier pour que le programme marche correctement !\nIl faut modifier le fichier 'pathsettings.ini'(C:\Program Files\Bebebole\IconPackMaker)")
