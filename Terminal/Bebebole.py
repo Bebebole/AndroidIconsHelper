@@ -42,7 +42,7 @@ icon_all = config.get("path", "icon_all")
 
 print("\n \033[1;32;40m██████╗░███████╗██████╗░███████╗██████╗░░█████╗░██╗░░░░░███████╗\n ██╔══██╗██╔════╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██║░░░░░██╔════╝\n ██████╦╝█████╗░░██████╦╝█████╗░░██████╦╝██║░░██║██║░░░░░█████╗░░\n ██╔══██╗██╔══╝░░██╔══██╗██╔══╝░░██╔══██╗██║░░██║██║░░░░░██╔══╝░░\n ██████╦╝███████╗██████╦╝███████╗██████╦╝╚█████╔╝███████╗███████╗\n ╚═════╝░╚══════╝╚═════╝░╚══════╝╚═════╝░░╚════╝░╚══════╝╚══════╝\n")
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
-question2 = input("\n\n\033[34;1;40mSalut Bilel ! \033[37;1;40mTu veux faire quoi ?\n\n[a] Remplir le fichier \033[31;1;40mappfilter\n\033[37;1;40m[b] Remplir le fichier \033[31;1;40mdrawable\n\033[37;1;40m[c] Remplir le fichier \033[31;1;40micon_pack\n\033[37;1;40m[d] Trier les icônes\n\n\033[33;1;40mAlors ? : ")
+question2 = input("\n\n\033[34;1;40mSalut ! \033[37;1;40mTu veux faire quoi ?\n\n[a] Remplir le fichier \033[31;1;40mappfilter\n\033[37;1;40m[b] Remplir le fichier \033[31;1;40mdrawable\n\033[37;1;40m[c] Remplir le fichier \033[31;1;40micon_pack\n\033[37;1;40m[d] Trier les icônes\n\n\033[33;1;40mAlors ? : ")
 
 
 #Appfilter
