@@ -58,7 +58,8 @@ icon_backup = config.get("path", "icon_backup")
 icon_all = config.get("path", "icon_all")
 clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
 
-print("\n \033[1;32;40m██████╗░███████╗██████╗░███████╗██████╗░░█████╗░██╗░░░░░███████╗\n ██╔══██╗██╔════╝██╔══██╗██╔════╝██╔══██╗██╔══██╗██║░░░░░██╔════╝\n ██████╦╝█████╗░░██████╦╝█████╗░░██████╦╝██║░░██║██║░░░░░█████╗░░\n ██╔══██╗██╔══╝░░██╔══██╗██╔══╝░░██╔══██╗██║░░██║██║░░░░░██╔══╝░░\n ██████╦╝███████╗██████╦╝███████╗██████╦╝╚█████╔╝███████╗███████╗\n ╚═════╝░╚══════╝╚═════╝░╚══════╝╚═════╝░░╚════╝░╚══════╝╚══════╝\n")
+clearConsole()
+print("\033[1;32;40m  ____       _          _           _\n |  _ \     | |        | |         | |\n | |_) | ___| |__   ___| |__   ___ | | ___\n |  _ < / _ \ '_ \ / _ \ '_ \ / _ \| |/ _ \ \n | |_) |  __/ |_) |  __/ |_) | (_) | |  __/\n |____/ \___|_.__/ \___|_.__/ \___/|_|\___|\n")
 question2 = input("\n\n\033[34;1;40mSalut ! \033[37;1;40mTu veux faire quoi ?\n\n[a] Remplir le fichier \033[31;1;40mappfilter\n\033[37;1;40m[b] Remplir le fichier \033[31;1;40mdrawable\n\033[37;1;40m[c] Remplir le fichier \033[31;1;40micon_pack\n\033[37;1;40m[d] Trier les icônes\n\033[37;1;40m[e] Trouver le ComponentInfo d'une App\n\n\033[33;1;40mAlors ? : ")
 
 #Appfilter
