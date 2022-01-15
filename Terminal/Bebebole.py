@@ -30,6 +30,8 @@ try:
 except FileExistsError:
     pass
 
+my_dttemp = get_datadir() / "BebeboleIconPackMaker/temp"
+
 import webbrowser
 import requests
 try :
@@ -119,16 +121,21 @@ if question2 == "d":
 if question2 == "e":
     clearConsole()
     appsearch= input("Le nom de l'app : ")
-    searchongoogle = "m.apkpure.com" + appsearch
-    linkapk = "https://m.apkpure.com/*/"
-
-    from googlesearch import search
-    for respo in search(searchongoogle, tld="co.in", num=10, stop=1, pause=2):
-        appid = respo.lstrip(linkapk)
-
     import re
-    appid = re.sub(r'^.*?/', '/', appid)
-    appid = appid.lstrip("/")
+    from google_play_scraper.scraper import PlayStoreScraper
+    scraper = PlayStoreScraper()
+    results = scraper.get_app_ids_for_query(appsearch)
+
+    def listToString(s): 
+
+        str1 = " " 
+
+        return (str1.join(results))
+
+    appid = listToString(results)
+    appid = re.match(r"^.*?\ ", appid).group(0)
+    appid = appid.replace(' ',"")
+
     clearConsole()
     os.chdir(my_datadir)
     print("\033[32;1;40mAppId : \033[33;1;40m" + appid + "\n\n\033[32;1;40mApp Name : \033[33;1;40m" + appsearch)
@@ -138,5 +145,27 @@ if question2 == "e":
                 line = re.match(r'^.*?\"', line).group(0)
                 line = line.replace(' "',"")
                 print("\n\033[32;1;40mComponentInfo :\033[33;1;40m" + line)
+
+    from google_play_scraper import app
+
+    result = app(
+        appid,
+        lang='en',
+        country='us'
+    )
+
+    result = re.sub("^(.*'icon': ')","", str(result))
+    result = re.match(r"^.*?\'", result).group(0)
+    result = result.replace("'","")
+
+    response = requests.get(result)
+    os.chdir(my_dttemp)
+    open('imgdl.jpg', 'wb').write(response.content)
     
+    import ascii_magic
+
+    output = ascii_magic.from_image_file("imgdl.jpg",columns=40,char="#")
+    print("\n")
+    ascii_magic.to_terminal(output)
+
 input()
