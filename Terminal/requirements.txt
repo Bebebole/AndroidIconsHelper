@@ -1,3 +1,0 @@
-google
-ascii_magic
-google_play_scraper
